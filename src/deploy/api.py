@@ -25,7 +25,16 @@ def predict():
         'predicted_sentiment': prediction
     })
 
-def get_model(model_type):
+def get_model(model_type: str):
+    """
+    Load pretrained model based on the model type
+
+    Args:
+    model_type (str): Model type to be loaded
+
+    Returns:
+    model: Pretrained model
+    """
     assert model_type in ['distil_bert', 'naive_bayes']
     if model_type == 'distil_bert':
         lightning_model = Distil_Bert.load_from_checkpoint('saved_models/distil_bert.pkl', num_labels=4)
