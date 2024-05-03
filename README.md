@@ -16,16 +16,13 @@ Define metric macro average F1-score, since the labels are not entirely equal di
 - F1-score (macro) = 0.95
 
 ## Part B: ML-Engineering
-- Download Distil bert from https://we.tl/t-PHmpxkyO90 and save under saved_models/distil_bert.pkl
-- Build and run docker container with: 
-docker build -t my-flask-app .
-docker run -p 4000:5000 my-flask-app
-
-Can then be tested with
-python src/deploy/request_test.py
-
-- missing request api so das man auch programatically requests senden kann
-
+- (Optional) download Distil bert from https://we.tl/t-PHmpxkyO90 and save under saved_models/distil_bert.pkl
+- Build and run docker container with:
+```
+docker build -t deploy_huk .
+docker run -p 4000:5000 deploy_huk
+```
+Now we can run inference:  `python src/deploy/request_test.py`
 
 
 
