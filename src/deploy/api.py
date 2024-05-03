@@ -3,7 +3,7 @@ import os
 import sys
 sys.path.append(os.getcwd())
 
-from src.lightning_models.distilberrt import distilbert
+from src.lightning_models.distilberrt import Distil_Bert
 from src.lightning_models.naive_bayes import naive_bayes
 
 app = Flask(__name__)
@@ -28,7 +28,7 @@ def predict():
 def get_model(model_type):
     assert model_type in ['distil_bert', 'naive_bayes']
     if model_type == 'distil_bert':
-        lightning_model = distilbert.load_from_checkpoint('saved_models/distil_bert.pkl', num_labels=4)
+        lightning_model = Distil_Bert.load_from_checkpoint('saved_models/distil_bert.pkl', num_labels=4)
         lightning_model.eval()
     else:
         lightning_model = naive_bayes()

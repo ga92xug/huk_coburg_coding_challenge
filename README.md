@@ -22,7 +22,7 @@ Define metric macro average F1-score, since the labels are not entirely equal di
 docker build -t deploy_huk .
 docker run -p 4000:5000 deploy_huk
 ```
-Now we can run inference:  `python src/deploy/request_test.py`
+Now we can run inference: `python src/deploy/request_test.py`
 
 
 

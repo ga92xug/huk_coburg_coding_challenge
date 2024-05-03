@@ -10,3 +10,4 @@ Flask
 matplotlib
 seaborn
 scikit-learn
+protobuf==3.20
