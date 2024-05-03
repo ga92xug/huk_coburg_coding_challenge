@@ -1,7 +1,11 @@
 import requests
 
-def make_prediction(text, model_type):
-    url = 'http://127.0.0.1:5000/predict'
+def make_prediction(text, model_type, docker=False):
+    if docker:
+        # since we do port mapping
+        url = "http://127.0.0.0:4000/predict"
+    else:
+        url = 'http://127.0.0.0:5000/predict'
     headers = {'Content-Type': 'application/json'}
     data = {
         'text': text,
@@ -16,7 +20,7 @@ def make_prediction(text, model_type):
 
 
 def main():
-    result = make_prediction("I love this company.", "distil_bert")
+    result = make_prediction("I love this company.", "naive_bayes", docker=True)
     print(result)
 
 
