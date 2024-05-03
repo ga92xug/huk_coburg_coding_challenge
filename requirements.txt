@@ -1,0 +1,12 @@
+lightning
+numpy
+pandas
+pytorch-lightning
+torch
+nltk
+transformers
+requests
+Flask
+matplotlib
+seaborn
+scikit-learn

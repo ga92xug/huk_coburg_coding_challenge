@@ -1,0 +1,3 @@
+*__pycache__
+lightning_logs/*
+saved_models/distil_bert.pkl
